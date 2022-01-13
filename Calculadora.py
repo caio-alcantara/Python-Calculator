@@ -3,20 +3,20 @@
 # com quaisquer dois números digitados pelo usuário.
 # O programa também conta com um sistema de validação de entrada de dados.
 
+from time import sleep
+
 
 def menuCalculadora():
     """
     Esta função imprime na tela um menu de uma calculadora simples.
     :return:
     """
+    funcoes = ['ADIÇÃO', 'SUBTRAÇÃO', 'MULTIPLICAÇÃO', 'DIVISÃO [N1/N2]', 'SAIR DA CALCULADORA']
     print('-' * 32)
     print(f"{'CALCULADORA PYTHON':^30}")
     print('-' * 32)
-    print(f"{'[1]':>9} - ADIÇÃO")
-    print(f"{'[2]':>9} - SUBTRAÇÂO")
-    print(f"{'[3]':>9} - MULTIPLICAÇÃO")
-    print(f"{'[4]':>9} - DIVISÃO [N1/N2]")
-    print(f"{'[5]':>9} - SAIR DA CALCULADORA")
+    for index, item in enumerate(funcoes):
+        print(f"{f'[{index+1}]':>9} {item}")
     print('-' * 32)
 
 
@@ -89,19 +89,27 @@ while True:
                             "\33[33m(5 para sair)\33[m] ")
 
     if operacao == 1:
+        sleep(0.3)
         textoComLinha(f"{num1} + {num2} = {num1 + num2:.2f}")
+        sleep(0.3)
 
     if operacao == 2:
+        sleep(0.3)
         textoComLinha(f"{num1} - {num2} = {num1 - num2:.2f}")
+        sleep(0.3)
 
     if operacao == 3:
+        sleep(0.3)
         textoComLinha(f"{num1} * {num2} = {num1 * num2:.2f}")
+        sleep(0.3)
 
     if operacao == 4:
+        sleep(0.3)
         try:
             textoComLinha(f"{num1} / {num2} = {num1 / num2:.2f}")
         except ZeroDivisionError:
             textoComLinha("Não é possível dividir por ZERO.")
+        sleep(0.3)
 
     if operacao == 5:
         textoComLinha("ENCERRANDO PROGRAMA")
