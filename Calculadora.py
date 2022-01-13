@@ -45,11 +45,11 @@ def leiaOperacao(text):
     :param text: Texto que será exibido no input.
     :return: O valor, já tratado, digitado pelo usuário.
     """
-    operaction = 0
+    operation = 0
     while True:
         try:
-            operaction = int(input(text))
-            while operaction == 0 or operaction > 5:
+            operation = int(input(text))
+            while operation == 0 or operation > 5:
                 print("\33[31mVocê não digitou um valor válido. Tente novamente!\33[m")
                 continue
         except (ValueError, TypeError):
@@ -57,7 +57,7 @@ def leiaOperacao(text):
             continue
         finally:
             break
-    return operaction
+    return operation
 
 
 def textoComLinha(text):
